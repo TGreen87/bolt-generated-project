@@ -1,0 +1,53 @@
+.org-chart-container {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  position: relative;
+}
+
+.org-chart-empty,
+.org-chart-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 100%;
+  background-color: var(--bg-color, #f5f5f5);
+  color: var(--text-color, #666);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.org-chart-error {
+  color: var(--error-color, #ff4d4f);
+}
+
+.theme-dark {
+  --bg-color: #141414;
+  --text-color: #fff;
+  --error-color: #ff7875;
+}
+
+.theme-light {
+  --bg-color: #fff;
+  --text-color: #000;
+  --error-color: #ff4d4f;
+}
+
+@media print {
+  .org-chart-container {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .org-chart-container canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .org-chart-container {
+    overflow-x: auto;
+  }
+}
